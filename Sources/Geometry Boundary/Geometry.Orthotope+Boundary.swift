@@ -1,3 +1,4 @@
+public import Affine
 public import Boundary
 public import Geometry
 
