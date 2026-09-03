@@ -1,6 +1,6 @@
-public import Affine
 public import Boundary
 public import Geometry
+public import Geometry_Affine_Geometry
 
 extension Geometry.Orthotope where N == 2, Scalar: FloatingPoint {
 
