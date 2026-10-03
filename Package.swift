@@ -19,12 +19,9 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-atoms/swift-geometry.git",
-            branch: "main"
-        ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-geometry-affine-geometry.git",
-            branch: "main"
+            url: "https://github.com/swift-molecules/swift-geometry.git",
+            branch: "main",
+            traits: ["Affine"]
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-boundary.git",
@@ -44,21 +41,14 @@ let package = Package(
             name: "Geometry Boundary",
             dependencies: [
                 .product(name: "Geometry", package: "swift-geometry"),
-                .product(
-                    name: "Geometry Affine Geometry",
-                    package: "swift-geometry-affine-geometry"
-                ),
                 .product(name: "Boundary", package: "swift-boundary"),
             ]
         ),
         .testTarget(
             name: "Geometry Boundary Tests",
             dependencies: [
+                "Geometry Boundary",
                 .product(name: "Geometry", package: "swift-geometry"),
-                .product(
-                    name: "Geometry Affine Geometry",
-                    package: "swift-geometry-affine-geometry"
-                ),
                 .product(name: "Boundary", package: "swift-boundary"),
                 .product(name: "Affine", package: "swift-affine"),
                 .product(name: "Tagged", package: "swift-tagged"),
