@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-geometry.git",
+            url: "https://github.com/swift-atoms/swift-geometry.git",
             branch: "main",
             traits: ["Affine"]
         ),
